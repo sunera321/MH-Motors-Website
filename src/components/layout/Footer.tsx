@@ -9,11 +9,11 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">About M H Motors</h3>
             <p className="text-gray-400">
-              Leading provider of spare parts for buses and lorries since 1998. 
+              Leading provider of spare parts for buses and lorries since 1998.
               Committed to quality, reliability, and exceptional customer service.
             </p>
           </div>
-          
+
           <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -22,9 +22,10 @@ export default function Footer() {
               <li><a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">Services</a></li>
               <li><a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">About Us</a></li>
               <li><a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">Contact</a></li>
+            
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-xl font-bold mb-4">Contact Info</h3>
             <ul className="space-y-4">
@@ -42,7 +43,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
@@ -55,7 +56,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 pt-8">
           <p className="text-center text-gray-400">
             © {new Date().getFullYear()} M H Motors. All rights reserved.
