@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../../firebaseConfig";
-import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
+import { collection, getDocs, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import Cover from "./Cover";
-import { Tag, Package, Edit } from 'lucide-react';
+import { Tag, Package, ScanBarcode, Edit, Trash2 } from 'lucide-react';
 
 const DisplayProducts = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [editingProductId, setEditingProductId] = useState(null);
     const [newStockStatus, setNewStockStatus] = useState('');
+    const [selectedProduct, setSelectedProduct] = useState(null);
 
     const stockStatusOptions = [
         'In Stock',
@@ -74,6 +75,23 @@ const DisplayProducts = () => {
         }
     };
 
+    const handleDelete = async (productId) => {
+        try {
+            // Remove from Firebase
+            const productRef = doc(db, "products", productId);
+            await deleteDoc(productRef);
+
+            // Update local state
+            setProducts(products.filter(product => product.id !== productId));
+        } catch (error) {
+            console.error("Error deleting product:", error);
+        }
+    };
+
+    const closeModal = () => {
+        setSelectedProduct(null); // Close modal by setting selected product to null
+    };
+
     if (loading) {
         return <p>Loading products...</p>;
     }
@@ -94,18 +112,30 @@ const DisplayProducts = () => {
                     {products.length ? (
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
                             {products.map((product) => (
-                                <div key={product.id} className="flex flex-col mt-5 overflow-hidden rounded-lg shadow-md ">
+                                <div key={product.id}
+
+                                    className="flex flex-col mt-5 overflow-hidden rounded-lg shadow-md">
+
                                     <img
                                         src={product.imageUrl}
+
+                                        onClick={() => setSelectedProduct(product)}
                                         alt={product.name}
                                         className="object-cover w-full h-48"
                                     />
-                                    <div className="p-4">
-                                        <div className="flex items-start justify-between mb-2">
+                                    <div className="p-4"
+
+                                    >
+                                        <div className="flex items-start justify-between mb-2"
+                                            onClick={() => setSelectedProduct(product)}
+                                        >
                                             <h3 className="text-lg font-semibold">{product.name}</h3>
                                             <span className="text-lg font-bold text-blue-600">${product.price}</span>
                                         </div>
-                                        <p className="mb-3 text-sm text-gray-600">{product.description}</p>
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <ScanBarcode size={16} className="text-gray-500" />
+                                            <p className="text-sm text-gray-600">{product.modelNumver}</p>
+                                        </div>
                                         <div className="flex items-center gap-2 mb-2">
                                             <Package size={16} className="text-gray-500" />
                                             <span className="text-sm text-gray-600">{product.manufacturer}</span>
@@ -153,16 +183,21 @@ const DisplayProducts = () => {
                                                     <div className="flex items-center gap-2">
                                                         <button
                                                             onClick={() => handleEditStatus(product.id, product.stockStatus)}
-                                                            className="text-gray-600 hover:text-blue-600 flex gap-3 "
+                                                            className="flex gap-3 text-gray-600 hover:text-blue-600"
                                                         >
-                                                            <Edit size={16} />
-                                                            <button className="px-2 py-1 text-white transition-colors bg-blue-600 rounded-md hover:bg-blue-700"
-                                                            
-                                                            >
-                                                                Edit Status
-                                                            </button>
-                                                        </button>
+                                                            <Edit size={20} />
 
+                                                        </button>
+                                                        <button
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                handleDelete(product.id);
+                                                            }}
+                                                            className="flex gap-3 text-red-600 hover:text-red-800"
+                                                        >
+                                                            <Trash2 size={20} />
+
+                                                        </button>
                                                     </div>
                                                 </>
                                             )}
@@ -176,6 +211,52 @@ const DisplayProducts = () => {
                     )}
                 </div>
             </div>
+            {selectedProduct && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="relative w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
+                        <button
+                            className="absolute text-gray-500 top-2 right-2 hover:text-gray-700"
+                            onClick={closeModal}
+                        >
+                            ✕
+                        </button>
+                        <img
+                            src={selectedProduct.imageUrl}
+                            alt={selectedProduct.name}
+                            className="object-cover w-full h-48 mb-4 rounded-lg"
+                        />
+                        <h3 className="mb-2 text-2xl font-bold">{selectedProduct.name}</h3>
+                        <p className="mb-4 text-sm text-gray-600">{selectedProduct.description}</p>
+                        <div className="flex items-center gap-2 mb-2">
+                            <ScanBarcode size={16} className="text-gray-500" />
+                            <span className="text-sm text-gray-600">{selectedProduct.modelNumver}</span>
+                        </div>
+                        <div className="flex items-center gap-2 mb-2">
+                            <Package size={16} className="text-gray-500" />
+                            <span className="text-sm text-gray-600">{selectedProduct.manufacturer}</span>
+                        </div>
+                        <div className="flex items-center gap-2 mb-3">
+                            <Tag size={16} className="text-gray-500" />
+                            <span className="text-sm text-gray-600">{selectedProduct.category}</span>
+                        </div>
+                        <span
+                            className={`px-3 py-1 rounded-full text-sm ${getStockStatusColor(
+                                selectedProduct.stockStatus
+                            )}`}
+                        >
+                            {selectedProduct.stockStatus}
+                        </span>
+                        <div className="mt-4">
+                            <button
+                                className="px-4 py-2 text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700"
+                                onClick={closeModal}
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     );
 };

@@ -13,8 +13,10 @@ const Login = () => {
         e.preventDefault();
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            alert("Login successful!");
             navigate("/ownerdhashbord");
+            alert("Login successful!");
+            localStorage.setItem("token", "200135606060");
+       
         } catch (error) {
             setError(error.message);
         }

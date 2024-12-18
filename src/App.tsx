@@ -22,12 +22,34 @@ function App() {
             {/* Catalog Route */}
             <Route path="/cataloglist" element={<Catalog />} />
             {/* Add Data Route */}
-            <Route path="/additems" element={<AddItem />} />
-            <Route path="/ownerdhashbord" element={<OwerDhshbord/>} />
-            <Route path="/ownercatalog" element={< OwnerCatalog/>} />
-            {/* Login Route */}
             <Route path="/login" element={<Login />} />
+            <Route
+              path="/additems"
+              element={
+                localStorage.getItem('token') === '200135606060' ? <AddItem /> : <Login />
+              }
+            />
+             <Route
+              path="/ownerdhashbord"
+              element={
+                localStorage.getItem('token') === '200135606060' ? <OwnerCatalog /> : <Login />
+              }
+            />
+             <Route
+              path="/ownercatalog"
+              element={
+                localStorage.getItem('token') === '200135606060' ? <OwnerCatalog /> : <Login />
+              }
+            />
+             <Route
+              path="/owerdhshbord"
+              element={
+                localStorage.getItem('token') === '200135606060' ? <OwerDhshbord /> : <Login />
+              }
+            />
+
           </Routes>
+          
         </main>
         <Footer />
       </div>
