@@ -84,7 +84,6 @@ const AddItemAdmin = () => {
         Add New Product
       </h2>
     <div className="max-w-4xl p-6 mx-auto mb-5 bg-white rounded-lg shadow-lg">
-   
      
       <form onSubmit={handleSubmit} className="mb-8 space-y-6">
         {error && <p className="text-sm text-red-500">{error}</p>}
@@ -175,6 +174,7 @@ const AddItemAdmin = () => {
         </div>
 
         <div className="flex justify-end">
+    
           <button
             type="submit"
             className="px-6 py-3 font-semibold text-white transition duration-300 bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"
@@ -186,9 +186,12 @@ const AddItemAdmin = () => {
               "Add Product"
             )}
           </button>
+       
         </div>
       </form>
+    
     </div>
+
     </>
   );
 };

@@ -5,7 +5,9 @@ import Footer from './components/layout/Footer';
 import Main from './components/Main';
 import Catalog from './catalog/catalog';
 import AddItem from './catalog/AddDataForm';
+import OwerDhshbord from './catalog/OwerDhshbord';
 import Login from './page/Loging';
+import OwnerCatalog from './catalog/OwnerCatalog';
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
             <Route path="/cataloglist" element={<Catalog />} />
             {/* Add Data Route */}
             <Route path="/additems" element={<AddItem />} />
+            <Route path="/ownerdhashbord" element={<OwerDhshbord/>} />
+            <Route path="/ownercatalog" element={< OwnerCatalog/>} />
             {/* Login Route */}
             <Route path="/login" element={<Login />} />
           </Routes>

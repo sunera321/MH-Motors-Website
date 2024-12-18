@@ -14,7 +14,7 @@ const Login = () => {
         try {
             await signInWithEmailAndPassword(auth, email, password);
             alert("Login successful!");
-            navigate("/additems");
+            navigate("/ownerdhashbord");
         } catch (error) {
             setError(error.message);
         }

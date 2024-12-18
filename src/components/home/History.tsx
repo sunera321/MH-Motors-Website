@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Award, Users, MapPin } from 'lucide-react';
+import { Calendar, Award, Users, MapPin, ShoppingCart, Network, NewspaperIcon } from 'lucide-react';
 
 const milestones = [
   {
@@ -9,23 +9,23 @@ const milestones = [
     icon: Calendar
   },
   {
-    year: '1998',
-    title: 'Foundation',
-    description: 'Established by Mr. M H Hilmeen in Kurunegala',
-    icon: Award
+    year: '2001',
+    title: 'New Shop',
+    description: 'Opened a new shop in Kurunegala town',
+    icon: ShoppingCart
   },
   {
-    year: '1998',
-    title: 'Foundation',
-    description: 'Established by Mr. M H Hilmeen in Kurunegala',
-    icon: Users
+    year: '2005',
+    title: 'Open 2nd Branch',
+    description: 'Opened new sub branch in Wariapola, Kurunegala',
+    icon: Network
   },
   {
-    year: '1998',
-    title: 'Foundation',
-    description: 'Established by Mr. M H Hilmeen in Kurunegala',
-    icon: MapPin
-  }
+    year: '2007',
+    title: 'Start Importing',
+    description: 'Spear part import from india',
+    icon: NewspaperIcon
+  },
 ];
 
 export default function History() {
@@ -34,10 +34,8 @@ export default function History() {
       <div className="container px-4 mx-auto">
         <h2 className="mb-12 text-3xl font-bold text-center">Our Journey</h2>
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-yellow-500" />
           
-          {/* Timeline items */}
           <div className="space-y-12">
             {milestones.map((milestone, index) => {
               const Icon = milestone.icon;
