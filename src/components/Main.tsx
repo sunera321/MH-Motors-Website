@@ -6,6 +6,7 @@ import History from './home/History';
 // import Memories from './home/Memories';
 import Location from './home/Location';
 import Memory from './home/Memory';
+import AboutUs from './home/AboutUs';
  
 
 
@@ -14,6 +15,7 @@ const Main = () => {
     <div>
         <Hero />
       <Features />
+      <AboutUs/>
       <Categories />
       <History />
       <Memory/>
