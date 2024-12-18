@@ -5,6 +5,7 @@ import Categories from './home/Categories';
 import History from './home/History';
 // import Memories from './home/Memories';
 import Location from './home/Location';
+import Memory from './home/Memory';
  
 
 
@@ -15,7 +16,7 @@ const Main = () => {
       <Features />
       <Categories />
       <History />
-    
+      <Memory/>
       <Location/>
     </div>
   )
