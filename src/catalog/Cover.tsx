@@ -10,10 +10,10 @@ const Cover = () => {
         className="object-cover w-full h-full opacity-20"
       />
     </div>
-    <div className="relative mx-auto max-w-7xl sm:px-6 lg:px-8 lg:py-16">
+    <div className="relative mx-auto max-w-7xl sm:px-6 lg:px-8 lg:py-8">
       <div className="md:w-2/3">
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-          Quality Auto Parts for Every Vehicle
+          Quality Auto Parts for Vehicle
         </h1>
         <p className="max-w-3xl mt-6 text-xl text-blue-100">
           Discover our extensive catalog of genuine and aftermarket parts. 

@@ -4,10 +4,12 @@ import { Menu, Wrench } from 'lucide-react';
 export default function Header() {
   return (
     <header className="text-white bg-gray-900">
-      <div className="container px-4 mx-auto">
+      <div className="container mx-auto px-">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-4">
-            <Wrench className="w-8 h-8 text-yellow-500" />
+          
+            <img src='src\asset\M H Motors.jpg' className='mt-1 w-14 h-14'></img>
+
             <h1 className="text-xl font-bold">M H Motors</h1>
           </div>
 

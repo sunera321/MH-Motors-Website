@@ -29,7 +29,11 @@ const DisplayProducts = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading products...</p>;
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="w-16 h-16 border-t-4 border-blue-500 border-solid rounded-full animate-spin"></div>
+      </div>
+    );
   }
 
   const getStockStatusColor = (status) => {
@@ -55,7 +59,7 @@ const DisplayProducts = () => {
       <div className="p-4 bg-slate-100">
         <div>
           <div className="mt-8 mb-3">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900">Parts Catalog</h2>
+            <h2 className="mb-4 text-3xl font-bold text-gray-900">Spa Parts Catalog</h2>
             <p className="text-gray-600">
               Browse our extensive collection of high-quality automotive parts
             </p>
@@ -73,18 +77,18 @@ const DisplayProducts = () => {
                   <img
                     src={product.imageUrl}
                     alt={product.name}
-                    className="object-cover w-full h-48"
+                    className="object-cover w-full h-40"
                   />
-                  <div className="p-4">
+                  <div className="p-4 pt-2">
                     <div className="flex items-start justify-between mb-2">
-                      <h3 className="text-lg font-semibold">{product.name}</h3>
-                      <span className="text-lg font-bold text-blue-600">Rs:{product.price}</span>
+                      <h3 className="text-[17px] font-semibold">{product.name}</h3>
+                      <span className="text-[17px] font-bold text-blue-600">Rs:{product.price}</span>
                     </div>
                     <div className="flex items-center gap-2 mb-2">
                       <ScanBarcode size={16} className="text-gray-500" />
                       <p className="text-sm text-gray-600 ">{product.modelNumver}</p>
-                    </div>  
-                   
+                    </div>
+
                     <div className="flex items-center gap-2 mb-2">
                       <Package size={16} className="text-gray-500" />
                       <span className="text-sm text-gray-600">{product.manufacturer}</span>
@@ -101,6 +105,14 @@ const DisplayProducts = () => {
                       >
                         {product.stockStatus}
                       </span>
+                      <div className="">
+                        <button
+                          className="px-2 py-1 text-white transition-colors bg-blue-600 rounded-md hover:bg-blue-700"
+                          onClick={() => window.open("https://wa.me/94788270611", "_blank")}
+                        >
+                          Buy Now
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -133,7 +145,7 @@ const DisplayProducts = () => {
               <ScanBarcode size={16} className="text-gray-500" />
               <span className="text-sm text-gray-600">{selectedProduct.modelNumver}</span>
             </div>
-         
+
             <div className="flex items-center gap-2 mb-2">
               <Package size={16} className="text-gray-500" />
               <span className="text-sm text-gray-600">{selectedProduct.manufacturer}</span>
