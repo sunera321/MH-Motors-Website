@@ -59,7 +59,7 @@ const DisplayProducts = () => {
       <div className="p-4 bg-slate-100">
         <div>
           <div className="mt-8 mb-3">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900">Spa Parts Catalog</h2>
+            <h2 className="mb-4 text-3xl font-bold text-gray-900">Spare Parts Catalog</h2>
             <p className="text-gray-600">
               Browse our extensive collection of high-quality automotive parts
             </p>
