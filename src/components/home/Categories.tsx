@@ -9,28 +9,28 @@ const categories = [
   },
   {
     title: 'Brake Systems',
-    image: 'https://images.unsplash.com/photo-1486754735734-325b5831c3ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80',
+    image: 'https://plus.unsplash.com/premium_photo-1677009540975-01b905eafb64?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnJha2UlMjBzeXN0ZW1zfGVufDB8fDB8fHww',
     description: 'Complete brake solutions for safety and reliability'
   },
   {
     title: 'Suspension Parts',
-    image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80',
+    image: 'https://images.unsplash.com/photo-1715545415004-7f30b0379365?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     description: 'Suspension components for smooth operation'
   },
   {
-    title: 'Engine Parts',
-    image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80',
-    description: 'High-quality engine components for optimal performance'
+    title: 'Body Parts',
+    image: 'https://plus.unsplash.com/premium_photo-1694394357585-489ad6c764a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    description: 'premium body parts crafted to enhance durability'
   },
   {
-    title: 'Brake Systems',
-    image: 'https://images.unsplash.com/photo-1486754735734-325b5831c3ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80',
-    description: 'Complete brake solutions for safety and reliability'
+    title: 'Electrical Parts',
+    image: 'https://images.unsplash.com/photo-1552656967-7a0991a13906?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    description: 'precision-engineered electrical components for consistent power'
   },
   {
-    title: 'Suspension Parts',
-    image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80',
-    description: 'Suspension components for smooth operation'
+    title: 'Lubricants',
+    image: 'https://images.unsplash.com/photo-1590227763209-821c686b932f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    description: 'top-grade lubricants for superior engine protection and efficient operation'
   }
   
 ];
