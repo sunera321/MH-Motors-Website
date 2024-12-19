@@ -132,10 +132,10 @@ const DisplayProducts = () => {
                                             <h3 className="text-lg font-semibold">{product.name}</h3>
                                             <span className="text-lg font-bold text-blue-600">${product.price}</span>
                                         </div>
-                                        <div className="flex items-center gap-2 mb-2">
-                                            <ScanBarcode size={16} className="text-gray-500" />
-                                            <p className="text-sm text-gray-600">{product.modelNumver}</p>
-                                        </div>
+                                         <div className="flex items-center gap-2 mb-2">
+                                                               <ScanBarcode size={16} className="text-gray-500" />
+                                                               <p className="text-sm text-gray-600 ">{product.modelNumber}</p>
+                                                             </div>
                                         <div className="flex items-center gap-2 mb-2">
                                             <Package size={16} className="text-gray-500" />
                                             <span className="text-sm text-gray-600">{product.manufacturer}</span>
@@ -229,7 +229,7 @@ const DisplayProducts = () => {
                         <p className="mb-4 text-sm text-gray-600">{selectedProduct.description}</p>
                         <div className="flex items-center gap-2 mb-2">
                             <ScanBarcode size={16} className="text-gray-500" />
-                            <span className="text-sm text-gray-600">{selectedProduct.modelNumver}</span>
+                            <span className="text-sm text-gray-600">{selectedProduct.modelNumber}</span>
                         </div>
                         <div className="flex items-center gap-2 mb-2">
                             <Package size={16} className="text-gray-500" />

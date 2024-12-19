@@ -86,7 +86,7 @@ const DisplayProducts = () => {
                     </div>
                     <div className="flex items-center gap-2 mb-2">
                       <ScanBarcode size={16} className="text-gray-500" />
-                      <p className="text-sm text-gray-600 ">{product.modelNumver}</p>
+                      <p className="text-sm text-gray-600 ">{product.modelNumber}</p>
                     </div>
 
                     <div className="flex items-center gap-2 mb-2">
@@ -143,7 +143,7 @@ const DisplayProducts = () => {
             <p className="mb-4 text-sm text-gray-600">{selectedProduct.description}</p>
             <div className="flex items-center gap-2 mb-2">
               <ScanBarcode size={16} className="text-gray-500" />
-              <span className="text-sm text-gray-600">{selectedProduct.modelNumver}</span>
+              <span className="text-sm text-gray-600">{selectedProduct.modelNumber}</span>
             </div>
 
             <div className="flex items-center gap-2 mb-2">
