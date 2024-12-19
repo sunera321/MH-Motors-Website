@@ -32,7 +32,7 @@ function App() {
              <Route
               path="/ownerdhashbord"
               element={
-                localStorage.getItem('token') === '200135606060' ? <OwnerCatalog /> : <Login />
+                localStorage.getItem('token') === '200135606060' ? <OwerDhshbord /> : <Login />
               }
             />
              <Route
@@ -41,12 +41,7 @@ function App() {
                 localStorage.getItem('token') === '200135606060' ? <OwnerCatalog /> : <Login />
               }
             />
-             <Route
-              path="/owerdhshbord"
-              element={
-                localStorage.getItem('token') === '200135606060' ? <OwerDhshbord /> : <Login />
-              }
-            />
+             
 
           </Routes>
           

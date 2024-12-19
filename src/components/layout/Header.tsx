@@ -17,7 +17,7 @@ export default function Header() {
             <nav>
               <ul className="flex space-x-6">
                 <li><a href="/" className="transition-colors hover:text-yellow-500">Home</a></li>
-                <li><a href="#" className="transition-colors hover:text-yellow-500">Catalog</a></li>
+                <li><a href="/cataloglist" className="transition-colors hover:text-yellow-500">Catalog</a></li>
                 <li><a href="#" className="transition-colors hover:text-yellow-500">Services</a></li>
                 <li><a href="#" className="transition-colors hover:text-yellow-500">Contact</a></li>
                 <li><a href="/login" className="transition-colors hover:text-yellow-500">Login</a></li>
