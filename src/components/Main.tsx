@@ -15,6 +15,7 @@ const Main = () => {
     <div>
         <Hero />
       <Features />
+      <AboutUs/>
       <Categories />
       <History />
       <Location/>
