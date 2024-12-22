@@ -7,6 +7,7 @@ import Catalog from './catalog/catalog';
 import AddItem from './catalog/AddDataForm';
 import OwerDhshbord from './catalog/OwerDhshbord';
 import Login from './page/Loging';
+import SpecialOrders from './catalog/SpecialOrders'
 import OwnerCatalog from './catalog/OwnerCatalog';
 
 
@@ -41,8 +42,12 @@ function App() {
                 localStorage.getItem('token') === '200135606060' ? <OwnerCatalog /> : <Login />
               }
             />
-             
-
+              <Route
+              path="/specialorders"
+              element={
+                localStorage.getItem('token') === '200135606060' ? <SpecialOrders /> : <Login />
+              }
+            />   
           </Routes>
           
         </main>

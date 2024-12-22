@@ -4,6 +4,7 @@ import {  Mail, MapPin, Phone } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="pt-5 pb-3 text-white bg-gray-900">
+        <section id="Footer">
       <div className="container px-4 mx-auto">
         <div className="grid justify-around gap-12 mb-6 md:grid-cols-3">
           <div>
@@ -56,6 +57,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
+      </section>
     </footer>
   );
 }

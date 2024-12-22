@@ -15,11 +15,7 @@ const Cover = () => {
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
           Quality Auto Parts for Vehicle
         </h1>
-        <p className="max-w-3xl mt-6 text-xl text-blue-100">
-          Discover our extensive catalog of genuine and aftermarket parts. 
-          We provide top-quality components to keep your vehicle running at its best.
-        </p>
- 
+      
       </div>
     </div>
   </div>
