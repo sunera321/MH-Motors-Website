@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebaseConfig"; // Path to your firebase.js
 
@@ -8,6 +8,7 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const provider = new GoogleAuthProvider();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -16,7 +17,19 @@ const Login = () => {
             navigate("/ownerdhashbord");
             alert("Login successful!");
             localStorage.setItem("token", "200135606060");
-       
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+
+    const handleGoogleLogin = async () => {
+        try {
+            const result = await signInWithPopup(auth, provider);
+            const user = result.user;
+            console.log("Google Login Successful", user);
+            navigate("/ownerdhashbord");
+            alert("Google login successful!");
+            localStorage.setItem("token", "200135606060");
         } catch (error) {
             setError(error.message);
         }
@@ -59,7 +72,13 @@ const Login = () => {
                         Login
                     </button>
                 </form>
-               
+                <hr className="my-6" />
+                <button
+                    onClick={handleGoogleLogin}
+                    className="w-full py-3 font-semibold text-gray-800 transition duration-300 bg-white border rounded-md hover:bg-gray-100"
+                >
+                    Sign in with Google
+                </button>
             </div>
         </div>
     );
