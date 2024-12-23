@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /additems
+Disallow: /ownerdhashbord
+Disallow: /ownercatalog
+Disallow: /specialorders
+Sitemap: https://mhmotors.netlify.app/sitemap.xml
